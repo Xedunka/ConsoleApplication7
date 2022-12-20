@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	int tablica[5] = { 10, 11, 12, 13, 14 };
+	int tablica[7] = { 10, 11, 12, 13, 14, 15, 16 };
 	cout << *tablica;
 	cout << tablica;
 
@@ -47,5 +47,20 @@ void losuj_pozycje()
 			ustaw_mine(poz_x, poz_y);
 			ilosc--;
 		}
+	}
+}
+
+bool ustaw_mine(int poz_x, int poz_y);
+{
+	if (plansza[poz_x][poz_y].wartosc != 40)
+	{
+		plansza[poz_x][poz_y].wartosc = 40;
+
+		for (int k = -1; k<2; k++)
+			for (int 1 = -1; 1 < 2; 1++)
+			{
+				if ((poz_x + 1) < 0 || (poz_y + k) < 0) continue;
+				if ((poz_x + 1) > 40 || (poz_y + k) > 40) continue;
+			}
 	}
 }
