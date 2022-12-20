@@ -61,6 +61,9 @@ bool ustaw_mine(int poz_x, int poz_y);
 			{
 				if ((poz_x + 1) < 0 || (poz_y + k) < 0) continue;
 				if ((poz_x + 1) > 40 || (poz_y + k) > 40) continue;
+
+				if (plansza[poz_x + 1][poz_y + k].wartosc == 40) continue;
+				plansza[poz_x + 1][poz_y + k].wartosc += 0;
 			}
 	}
 }
