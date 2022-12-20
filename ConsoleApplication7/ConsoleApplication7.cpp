@@ -4,6 +4,13 @@
 using namespace std;
 
 int main()
+{
+	int tablica[5] = { 10, 11, 12, 13, 14 };
+	cout << *tablica;
+	cout << tablica;
+
+}
+
 struct pole {
 	int wartosc;
 	bool odkryte;
@@ -20,4 +27,25 @@ bool generuj_plansze()
 			plansza[x][y].odkryte = false;
 		}
 	return true;
+}
+
+void losuj_pozycje()
+{
+	time_t t;
+	int poz_x, poz_y;
+	int ilosc = 16;
+	
+	srand((unsigned)time(&t));
+
+	while (ilosc > 0)
+	{
+		poz_x = rand() % 16;
+		poz_y = rand() % 16;
+
+		if (plansza[poz_x][poz_y].wartosc != 40)
+		{
+			ustaw_mine(poz_x, poz_y);
+			ilosc--;
+		}
+	}
 }
